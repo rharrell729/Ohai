@@ -16,11 +16,20 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 // Create chat bot
 dotenv.load();
 var connector = new builder.ChatConnector({
-    appId: process.env.MY_APP_ID,
-    appPassword: process.env.MY_APP_PASSWORD
+    MY_APP_ID: process.env.MY_APP_ID,
+    MY_APP_PASSWORD: process.env.MY_APP_PASSWORD
 });
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
+
+//=========================================================
+// Web stuff
+//=========================================================
+
+server.get('/', restify.serveStatic({
+ directory: __dirname,
+ default: '/index.html'
+}));
 
 //=========================================================
 // Bots Dialogs
