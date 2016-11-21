@@ -21,7 +21,7 @@ server.get(/.*/, restify.serveStatic({
 
 // Create chat bot
 var connector = new builder.ChatConnector({
-    appID: process.env.MY_APP_ID,
+    appId: process.env.MY_APP_ID,
     appPassword: process.env.MY_APP_PASSWORD
 });
 
