@@ -1,0 +1,24 @@
+{
+  "name": "ohai",
+  "version": "1.0.0",
+  "description": "a chat bot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rharrell729/Ohai.git"
+  },
+  "author": "Rob Harrell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rharrell729/Ohai/issues"
+  },
+  "homepage": "https://github.com/rharrell729/Ohai#readme",
+  "dependencies": {
+    "botbuilder": "^3.4.4",
+    "dotenv": "^2.0.0",
+    "restify": "^4.3.0"
+  }
+}
