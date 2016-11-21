@@ -18,6 +18,7 @@
   "homepage": "https://github.com/rharrell729/Ohai#readme",
   "dependencies": {
     "botbuilder": "^3.4.4",
+    "botbuilder-calling": "^3.0.1",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "https": "^1.0.0",

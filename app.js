@@ -4,29 +4,30 @@ var dotenv = require('dotenv');
 
 
 //=========================================================
-// Bot Setup
+// Server Setup
 //=========================================================
 
 // Setup Restify Server
 var server = restify.createServer();
-
-server.listen(process.env.PORT || 3978, function () {
+server.listen(process.env.port || process.env.PORT || 3978, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
-server.get('/', restify.serveStatic({
- directory: __dirname,
- default: '/index.html'
+
+//Set up a static web page - for testing deployment
+server.get(/.*/, restify.serveStatic({
+ 'directory': '.',
+ 'default': '/index.html'
 }));
 
-  
 // Create chat bot
-dotenv.load();
 var connector = new builder.ChatConnector({
-    OHAI_APP_ID: process.env.MY_APP_ID,
-    OHAI_APP_PASSWORD: process.env.MY_APP_PASSWORD
+    appID: process.env.MY_APP_ID,
+    appPassword: process.env.MY_APP_PASSWORD
 });
+
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
+
 
 //=========================================================
 // Bots Dialogs
