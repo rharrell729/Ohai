@@ -16,8 +16,8 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 // Create chat bot
 dotenv.load();
 var connector = new builder.ChatConnector({
-    MY_APP_ID: process.env.MY_APP_ID,
-    MY_APP_PASSWORD: process.env.MY_APP_PASSWORD
+    OHAI_APP_ID: process.env.MY_APP_ID,
+    OHAI_APP_PASSWORD: process.env.MY_APP_PASSWORD
 });
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
