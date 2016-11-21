@@ -2,6 +2,8 @@ var restify = require('restify');
 var builder = require('botbuilder');
 var dotenv = require('dotenv');
 
+require('dotenv').config();
+
 
 //=========================================================
 // Server Setup
